@@ -47,6 +47,9 @@ func TestNextTokenWithCode(t *testing.T) {
 	};
 	
 	let result = add(five, ten);
+
+	"foobar"
+	"Foo Bar"
 	`
 
 	tests := []struct {
@@ -89,6 +92,8 @@ func TestNextTokenWithCode(t *testing.T) {
 		{token.IDENT, "ten"},
 		{token.RPAREN, ")"},
 		{token.SEMICOLON, ";"},
+		{token.STRING, "foobar"},
+		{token.STRING, "Foo Bar"},
 		{token.EOF, ""},
 	}
 
